@@ -12,6 +12,14 @@ import os
 bot = commands.Bot(command_prefix="k!")
 client = discord.ext.commands.Bot(None)
 
+def is_server_staff(ctx):
+    x = ctx.message.author.roles
+    y = False
+    for role in x:
+        if role.name == "Staff":
+            y = True
+    return y
+
 @bot.event
 async def on_ready():
     print ("Systems online, Monokuma ready for combat!")
@@ -44,6 +52,7 @@ async def amireally(ctx):
     await bot.ban(ctx.message.author)
 
 @bot.command(pass_context=True)
+@commands.check(is_server_staff)
 async def kick(ctx, user: discord.Member):
     embed = discord.Embed(
         title="User Kicked!",
@@ -72,6 +81,7 @@ async def kick(ctx, user: discord.Member):
 
 
 @bot.command(pass_context=True)
+@commands.check(is_server_staff)
 async def ban(ctx, user: discord.Member):
     embed = discord.Embed(
         title="{} has been banned!".format(user.name),
@@ -86,6 +96,7 @@ async def ban(ctx, user: discord.Member):
     await bot.ban(user)
 
 @bot.command(pass_context=True)
+@commands.check(is_server_staff)
 async def strike(ctx, user: discord.Member):
     embed = discord.Embed(
         title="{} has been striked!".format(user.name), 
