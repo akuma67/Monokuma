@@ -1,4 +1,4 @@
-#Monokuma by akuma67, have fun
+#Monokuma by akuma67 and JakeMakesStuff, have fun
 #I also made this bot Open Source because why not
 #Some code is taken from Dimoniwer and Da532 with permission, thanks guys!
 
@@ -120,9 +120,9 @@ async def strike(ctx, user: discord.Member, *, reason):
 @bot.command(pass_context=True)
 async def about(ctx):
     embed = discord.Embed(
-        title="Monokuma is a bot",
+        title="Monokuma is",
         colour=discord.Colour(0x323298),
-        description="made by akuma67#6339, and is updated quite a bit.")
+        description="made by **akuma67#6339** and **Jake#0009**")
 
     embed.set_thumbnail(url="https://i.imgur.com/JCeJrB9.jpg")
     embed.set_author(name="About This Bot", icon_url="https://i.imgur.com/ZpCcwYr.png")
