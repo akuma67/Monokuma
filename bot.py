@@ -30,7 +30,7 @@ async def on_ready():
     print ("Systems online, Monokuma ready for combat!")
     print ("Current bot user = " + bot.user.name)
     print ("Current bot ID = " + bot.user.id)
-    await bot.change_presence(game=discord.Game(name='Aphex Twin', type=2), status=discord.Status('online'))
+    await bot.change_presence(game=discord.Game(name='k!help', type=2), status=discord.Status('online')) #you could set the playing status to anything you want
 
 @bot.command(pass_context=True)
 async def thatpersonis(ctx, user: discord.Member):
