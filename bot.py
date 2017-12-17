@@ -6,11 +6,16 @@ import discord, chalk
 import random
 from discord.ext import commands
 from discord.ext.commands import Bot
+from pymongo import MongoClient
 import asyncio
 import os
 
 bot = commands.Bot(command_prefix="k!")
 client = discord.ext.commands.Bot(None)
+mclient = MongoClient()
+
+db = mclient.monokuma
+strikes = db.strikes
 
 def is_server_staff(ctx):
     x = ctx.message.author.roles
@@ -97,7 +102,9 @@ async def ban(ctx, user: discord.Member):
 
 @bot.command(pass_context=True)
 @commands.check(is_server_staff)
-async def strike(ctx, user: discord.Member):
+async def strike(ctx, user: discord.Member, *, reason):
+    strikes.insert_one({"staff_id" : ctx.message.author.id, "user_id" : user.id, "reason" : reason})
+
     embed = discord.Embed(
         title="{} has been striked!".format(user.name), 
         colour=discord.Colour(0x573dcd))
