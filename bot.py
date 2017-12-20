@@ -122,7 +122,7 @@ async def about(ctx):
     embed = discord.Embed(
         title="Monokuma is",
         colour=discord.Colour(0x323298),
-        description="made by **akuma67#6339** and **Jake#0009**")
+        description="made by **akuma67#6339**, **Jake#0009**, and **EC20#2042**.")
 
     embed.set_thumbnail(url="https://i.imgur.com/JCeJrB9.jpg")
     embed.set_author(name="About This Bot", icon_url="https://i.imgur.com/ZpCcwYr.png")
