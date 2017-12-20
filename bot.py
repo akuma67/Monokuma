@@ -54,7 +54,8 @@ async def ping(ctx):
 @bot.command(pass_context=True)
 async def amireally(ctx):
     await bot.say("https://i.imgur.com/jF9hFiQ.png")
-    await bot.ban(ctx.message.author)
+    await bot.say("bcaus u mak dimnd mems, get kick!1")
+    await bot.kick(ctx.message.author)
 
 @bot.command(pass_context=True)
 @commands.check(is_server_staff)
@@ -126,7 +127,7 @@ async def about(ctx):
 
     embed.set_thumbnail(url="https://i.imgur.com/JCeJrB9.jpg")
     embed.set_author(name="About This Bot", icon_url="https://i.imgur.com/ZpCcwYr.png")
-    embed.set_footer(text="MonokumaPY, made with ❤️", icon_url="https://i.imgur.com/ZpCcwYr.png")
+    embed.set_footer(text="Monokuma, made with ❤️", icon_url="https://i.imgur.com/ZpCcwYr.png")
 
     embed.add_field(name="What is this bot and what does it do? 🤔", value="This bot can do many things, such as show memes, chat with you, and many more! It can also do some serious things, such as moderation commands.  The full command list can be viewed if you use the command **help.** ")
     embed.add_field(name="Oh fuck, something broke!  What do I do?", value="It's alright! Just contact me about any issues, and I'll fix them. ")
@@ -167,3 +168,4 @@ async def profile(ctx, user: discord.Member):
     await bot.say(embed=embed)
 
 bot.run("token") #enter your token here if you're making a new instance
+
